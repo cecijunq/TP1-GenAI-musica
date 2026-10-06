@@ -1,0 +1,29 @@
+# requirements.txt
+
+# Manipulação e análise de dados
+numpy
+pandas
+
+# Visualização
+matplotlib
+seaborn
+
+# Requisições HTTP
+requests
+
+# Variáveis de ambiente
+python-dotenv
+
+# Jupyter
+jupyter
+ipykernel
+
+# Testes
+pytest
+
+# Qualidade de código
+black
+flake8
+
+# MIDI
+pretty_midi

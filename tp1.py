@@ -143,6 +143,9 @@ def fitness(gen, pesos=PESOS, detalhado=False):
     total = sum(pesos[k] * partes[k] for k in pesos)
     return (total, partes) if detalhado else total
 
+
+# ============================ CÓDIGO REFERENTE AO ALGORITMO GENÉTICO =============================
+
 def gerar_populacao(n):
     populacao = []
     fit = []
@@ -150,7 +153,6 @@ def gerar_populacao(n):
     for _ in range(n):
         g = gerar_genotipo()
         populacao.append(g)
-        #fit.append(fitness(g))   # só o número; detalhado=True não é necessário aqui
 
     return populacao
 
@@ -164,7 +166,6 @@ def roleta(populacao, _fitness):
         if acumulado >= r:
             return individuo
     return populacao[-1]                  # segurança contra arredondamento
-
 
 def selecao(populacao, n_elite=3):
     _fitness = [fitness(ind) for ind in populacao]
@@ -207,7 +208,6 @@ def mutar_gene(gene, pos):
     if pos in (0, TAM_FRASE):                      # início de frase nunca vira S
         return random.randrange(N_GRAUS)
     return gene_aleatorio()                        # pode virar nota ou S
-
 
 def mutacao(populacao, taxa=TAXA_MUTACAO):
     nova = []
